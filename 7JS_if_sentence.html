@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style></style>
+</head>
+<body>
+    <script>
+        /*
+        //조건문 conditional statement
+        if(true){
+            alert('result : true');
+        }// if(false)는 아무일도 생기지 않는다.
+
+        if(true){
+            alert(1);
+            alert(2);
+            alert(3);
+        }
+        alert(4);
+
+        // else의 활용 그렇지 않으면~ 이라는 뜻을 가진다.
+        
+        if(true){
+            alert(1);
+        } else {
+            alert(2);
+        }
+        
+        //else if 를 활용하면 더 다양한 내용을 표현할 수 있다.
+
+        if(false){
+            alert(1);
+        } else if(true) {
+            alert(2);
+        } else if(true){
+            alert(3);
+        } else {
+            alert(4)
+        } // 2를 출력하게 된다.
+
+        var a = 1 ;
+        if(a===1){
+            alert('true');
+        }
+
+        prompt('당신의 나이는?'); //입력창을 받을 수 있게 된다.
+        alert(prompt('당신의 ID는?'));
+        */
+
+        
+        var ID = prompt('당신의 ID는?');
+        if ( ID === 'chanwoo' ){
+
+                var password = prompt('비밀번호를 입력해주세요');
+                if ( password === '1111' ) {
+                alert('아이디가 일치합니다')
+                } else {
+                var password = prompt('비밀번호를 다시 입력해주세요');
+                while(password !== '1111'){
+                var password =prompt('비밀번호를 다시입력해주세요');
+                }
+            alert('아이디가 일치합니다')
+
+            }
+        } else {
+
+                var ID = prompt('다시 ID를 입력해주세요');
+                while( ID !=='chanwoo' ) {
+                var ID = prompt('다시ID를 입력해주세요.');
+                }
+                var password = prompt('비밀번호를 입력해주세요')
+                while(password !== '1111'){
+                var password =prompt('비밀번호를 다시입력해주세요'); 
+                }
+                alert('아이디가 일치합니다')
+
+        }
+       
+            
+        
+        
+        
+        
+    </script>
+</body>
+</html>
