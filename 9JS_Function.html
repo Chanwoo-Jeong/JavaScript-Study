@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style></style>
+</head>
+<body>
+    <script>
+        function numbering(){
+            var i = 0;
+            while(i < 20){
+                document.write(i+'<br>');
+                i += 1;
+            }
+        }
+        numbering();
+
+        function get_member1(){
+            return 'chanwoo';
+        }
+
+        function get_member2(){
+            return 'munkyeong';
+            //return이 여러개일 경우 첫번째 return만 반영하고 그다음 return은 무시되게 된다.
+        }
+
+        alert(get_member1());
+        alert(get_member2());
+
+        function get_argument(arg){
+            return arg*1000;
+            // 여기서 arg는 매개변수 parameter.
+            // 실제로 arg에 들어온 1,2는 인자라고 부른다. 
+        }
+        alert(get_argument(1));
+        alert(get_argument(2));
+
+        function get_argument2(arg1 , arg2){
+            return arg1 + arg2;
+        }
+        alert(get_argument2(1,2));
+
+        //함수를 정의하는 또다른 방법
+
+        numbering1 = function(){
+            i=0;
+            while(i<10){
+                document.write(i);
+                i++;
+            }
+        }
+        numbering1();
+
+        //또다른 방법
+
+        (function(){
+            i=0;
+            while(i<10){
+                document.write(i);
+                i++;
+            }
+        })();
+
+        //이것은 익명함수로 일회성 호출시 사용. 함수정의를 ()묶은 후 (); 로 함수 호출
+
+
+    </script>
+</body>
+</html>

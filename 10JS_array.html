@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style></style>
+</head>
+<body>
+    <script>
+        var member = [ 'egoing' , 'chanwoo' , 'munkyeong' ,'hajin']
+        alert(member[0]); // egoing이 호출된다.
+        alert(member[2]); // munkyeong 을 호출한다.
+        // 각 원소별로 갖게되는 고유번호는 색인(index)라고 부르게 된다.
+
+        function get_members(){
+            return [ 'egoing' , 'chanwoo' , 'munkyeong' ,'hajin' ,'superman']
+        }
+
+        members = get_members();
+        document.write(members[0].toUpperCase()+'<br>');
+        document.write(members[1].toUpperCase()+'<br>');
+        document.write(members[2].toUpperCase()+'<br>');
+
+        alert(member.length); // 4가 출력된다.
+
+        document.write('<br>');
+      
+
+        for(i=0; i<4; i++){
+        document.write(members[i].toUpperCase()+'<br>');
+        }
+
+        document.write('<br>');
+      
+        for(i=0; i<members.length; i++){
+        document.write(members[i].toUpperCase()+'<br>');
+        }
+
+        document.write('<br>');
+      
+        //배열에 원소를 추가하는 방법은 다음과 같다.
+        members.push('betman');
+        
+        document.write(members[5]); // 추가된 원소 betman이 출력된다.
+
+        document.write('<br>');
+
+        //여러개의 원소를 배열안에 넣는방법은 다음과 같다.
+
+        members = members.concat(['minwoo','honggyu']);
+        document.write(members);
+
+        document.write('<br>');
+
+        //배열 앞쪽에 새로운 원소를 넣는 방법은 다음과 같다.
+
+        members.unshift('jongwha');
+        document.write(members);
+
+        document.write('<br>');
+
+        //배열 중간에 새로운 원소를 끼워넣는 방법은 다음과 같다.
+        // a.splice(index,howmany,element)
+        
+        //index는 원소를 끼워넣을 위치이며
+        //howmany는 해당 index로부터 삭제할 원소수이다.
+        //howmany를 0으로 둘경우 어떠한 원소 삭제도 없이 앞에 새로운 원소가 추가된다.
+        //element 추가할 원소를 적는다.
+
+        var a = ['a','b','c'];
+        a.splice(1,0,'x','y');
+        document.write(a);
+
+        //배열 가장 첫번째 원소를 지우는 방법은 shift()이다.
+        a.shift();
+        //배열 가장 마지막 원소를 지우는 방법은 pop()이다.
+        a.pop();
+
+        //배열을 순서대로(알파벳)정렬하는 방법은 
+        a.sort();
+        //배열을 역순으로(알파벳)정렬하는 방법은
+        a.reverse();
+
+        // prompt, alert과 같은 함수는 기본함수로 내장함수라 부르며 직접 function을 통해 함수를 정의하는 것은 사용자정의 함수라고 부른다.
+    </script>
+</body>
+</html>

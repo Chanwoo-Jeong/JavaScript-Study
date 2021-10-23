@@ -47,7 +47,7 @@
         alert(prompt('당신의 ID는?'));
         */
 
-        
+        /* ID접속시스템
         var ID = prompt('당신의 ID는?');
         if ( ID === 'chanwoo' ){
 
@@ -59,7 +59,7 @@
                 while(password !== '1111'){
                 var password =prompt('비밀번호를 다시입력해주세요');
                 }
-            alert('아이디가 일치합니다')
+                alert('아이디가 일치합니다 '+ID+'님 반갑습니다.')
 
             }
         } else {
@@ -72,15 +72,75 @@
                 while(password !== '1111'){
                 var password =prompt('비밀번호를 다시입력해주세요'); 
                 }
-                alert('아이디가 일치합니다')
+                alert('아이디가 일치합니다'+ID+'님 반갑습니다.')
 
         }
-       
-            
-        
-        
-        
-        
+        */
+
+        if(true && true){
+            alert(1);
+        } // 좌항과 우항이 모두 참일때 1을 호출한다. &&는 and라고 불린다.
+
+        // false && true
+        // ture && false 모두 false처리가 된다. 
+
+        //<논리 연산자를 이용한 ID시스템>
+
+        var ID = prompt('당신의 ID를 입력해주세요');
+        var password = prompt('당신의 password를 입력해주세요');
+
+        if( ID === 'chanwoo' && password === '1111'){
+            alert('로그인되었습니다. ' +ID+ '님 환영합니다.')
+        } else {
+            if(ID === 'chanwoo'){
+                alert('password가 틀렸습니다.')
+                var password = prompt('password를 다시입력해주세요');
+                while(password !== '1111'){
+                    var password = prompt('password를 다시입력해주세요');
+                }
+                alert('로그인이 확인되었습니다.' +ID+ '님 환영합니다.');
+            } else {
+                alert('ID를 다시 입력해주세요.')
+                var ID = prompt('당신의 ID를 입력해주세요');
+                while(ID !== 'chanwoo'){
+                    var ID = prompt('ID를 다시입력해주세요');
+                }
+                var password = prompt('password를 다시입력해주세요');
+                while(password !== '1111'){
+                    var password = prompt('password를 다시입력해주세요');
+                }
+                alert('로그인이 확인되었습니다.' +ID+ '님 환영합니다.');
+            }
+        }
+
+        // or 연산자 ||
+        if(0){alert('1');}
+        if(1){alert('1');}
+        // JS에서는 0은 false 1은 true를 나타낸다.
+
+        //빈문자열과 undefined는 false로 간주한다.
+
+        /*
+        if(!''){
+            alert('빈 문자열')
+        }
+        if(!undefined){
+            alert('undefined');
+        }
+        var a;
+        if(!a){
+            alert('값이 할당되지 않은 변수'); 
+        }
+        if(!null){
+            alert('null');
+        }
+        if(!NaN){
+            alert('NaN');
+        }
+
+        앞에 느낌표가 되어있는것들은 false를 true로 바꾸어 alert을 실행시키기 위함이다.
+
+        */
     </script>
 </body>
 </html>
