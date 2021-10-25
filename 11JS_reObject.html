@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style></style>
+</head>
+<body>
+    <script>
+        var object = { 'chanwoo' : 80 , 'minwoo' : 90 , 'munkyeong' : 150}
+
+        for (var name in object){
+            document.write('<li>'+name+object[name]+'</li>');
+        }
+
+        document.write();
+
+        var best = ['a','b','c'];
+
+        document.write('best');
+
+        document.write('<br>');
+
+        var object2 = { 
+            'list' : { 'happy' : 55 , 'bmw' : 65 , 'crome' : 56 }, 
+            'show' : function(){
+                for( var name in this.list){
+                    document.write(name +':'+ this.list[name]+'<br>')
+                }
+            }
+        }
+
+        object2['show']();
+
+    </script>
+</body>
+</html>
