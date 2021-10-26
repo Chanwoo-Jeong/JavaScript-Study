@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style> </style>
+</head>
+<body>
+    <script>
+        var vscope = 'global'; // 이것을 전역변수라고 한다.
+        function fscope(){
+             var vscope = 'local'; // 이것을 지역변수라고 한다.
+             var inline = 'live';  
+            alert(inline);
+        }
+
+        
+        inline = 'happy'
+
+
+        fscope();
+        alert(inline);
+     
+        //alert(vscope); // 함수내에 var이 있다면 지역변수를 생성한 것으로 global이 호출되지만 var이 없다면 전역변수를 변경한것이 됨으로 전역변수 vscope은 local이 되어버린다. 
+        
+
+        // 그러나 반대로 지역변수를 설정하고 외부에서 var없이 지역변수를 변경하는 것은 불가능하다.
+
+        //지역변수를 사용하는 것이 가장 적절하다.
+
+        for(var i =0; i<5 ; i++) {
+            document.write(i);
+        }
+
+        var Myapp = {}
+
+        Myapp.calculator = {
+            'left' : null,
+            'right' : null
+        }
+
+        Myapp.cordinate = {
+            'left' : null,
+            'right' : null
+        }
+
+        Myapp.calculator.left = 10;
+        Myapp.calculator.right = 20;
+
+        function sum(){
+            return Myapp.calculator['left'] + Myapp.calculator.right;
+        }
+       
+        
+        document.write('<br>');
+        document.write(sum());
+
+        //Javascript에서는 함수(function)안에서만 지역변수를 할당하고 이 변수를 밖에서 사용할 수 없다. 그러나 함수를 제외한 if문 for문등에서의 변수들은 지역변수를 넘어서 전역변수로도 사용이 가능하다. 이러한 것은 다른 언어들과는 다른 차이점이다.
+
+
+        //마지막 예제
+
+        var i = 5;
+
+        function a(){
+            var i = 10;
+            b();
+        }
+
+        function b(){
+            document.write(i);
+        }
+
+        //이런 경우 function b()에 있는 i는 함수가 생성된 그 시점인 전역변수 5를 값으로 갖게 된다.
+
+        //즉 사용하는 순간의 변수지정이 아니라 정의 될때의 값을 갖게 되며 이를 정적유효범위라고 부르게 된다.
+
+
+    </script>
+</body>
+</html>

@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
    <script src="greeting.js">
        /*
        greeting.js 내용
@@ -9,7 +13,7 @@
         }
        */ 
    </script>
-   
+
     <style>
         
     </style>
@@ -19,5 +23,19 @@
         //module화란 자주 사용되는 부품들을 재사용하기 편하도록 만드는 작업을 이야기한다.
         alert(welcome());
     </script>
+
+        <ul id="list">
+            <li>empty</li>
+            <li>empty</li>
+            <li>empty</li>
+            <li>empty</li>
+        </ul>
+
+        <input type="button" value="change" id="change_btn">
+
+        <script>
+          $('#change_btn').click(function(){$('#list li').text('coding everybody')})
+        </script>
+        
 </body>
 </html>
