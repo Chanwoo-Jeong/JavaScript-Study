@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <sytle></sytle>
+</head>
+<body>
+    <script>
+
+        function outter(){
+            function inner(){
+                var text = 'coding everybody'
+                alert(text);
+            }
+            inner();
+        }
+
+        outter();
+
+        //그 함수에서만 사용되는 함수이기 때문에 안쪽에 만든다(응집성).
+
+        function outter(){
+            var text = 'coding everybody'
+            function inner(){
+                alert(text);
+            }
+            inner();
+        }
+
+        outter();
+        // text라는 변수가 내부함수를 벗어나 있을때 inner함수에서 외부에 있는 지역변수 text를 찾는다 내부함수에서 외부함수에 있는 지역변수에 접근할 수 있다. 이것을 바로 closure라고 한다.
+
+        function outter2(){
+            var title = 'coding everybody';
+            return function(){alert(title)};
+        }
+
+        var inner2 = outter2();
+
+        inner2();
+
+        // return을 통해 이미 값을 받았는데도 불구하고 다시 외부함수의 지역변수 title에 접근할 수 있다.
+
+
+        function factory_movie(title){
+            return {
+                'get_title' : function(){
+                    return title;
+                },
+                'set_title' : function(_title){
+                    title = _title
+                }
+            }
+        }
+
+        ghost = factory_movie('Ghost in the shell');
+        matrix = factory_movie('Matrix');
+
+        alert(ghost.get_title());
+        alert(matrix.get_title());
+
+        ghost.set_title('공각기동대');
+        
+        alert(ghost.get_title());
+        alert(matrix.get_title());
+
+        //클로저의 응용 // 어렵다
+        var arr = []
+
+        for(var i=0; i<5; i++ ){
+            arr[i] = function(id){ 
+                return function(){
+                    return id;
+                }
+            }(i);
+        }
+
+        for(var index in arr){
+            console.log(arr[index]());
+        }
+
+        </script>
+</body>
+</html>

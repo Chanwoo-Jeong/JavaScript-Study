@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style></style>
+</head>
+<body>
+    <script>
+        function sum(arg1,arg2){
+            return arg1+arg2;
+        }
+        sum(1,2);
+
+        //함수를 호출하는 다른 방법
+        //apply는 sum이라는 함수(객체)에 담겨있는 메소드
+
+        sum.apply(null,[1,2]); //3이 나온다.
+
+        //왜 null을 포함한 apply를 사용하는가?
+
+        o1 = {'val1':1, 'val2':2, 'val3':3};
+        o2 = {'v1':10, 'v2':50, 'v3':100, 'v4':25}
+
+        function sum(){
+            var _sum = 0;
+            for(name in this){
+                _sum += this[name]; 
+                //여기서 this란 무엇이냐?
+                //함수자체에 this가 정의하지 않았기 때문에 아래 apply에서 객체인자를 전달할때 this가 정의된다.
+            }
+            return _sum;
+        }
+        alert(sum.apply(o1));
+        alert(sum(o1)); //o1은 값이아닌 객체이므로 인자로 받을수 없다.
+        alert(sum.apply(o2));
+        alert(sum(o2)); //o2은 값이아닌 객체이므로 인자로 받을수 없다.
+        
+    </script>
+</body>
+</html>

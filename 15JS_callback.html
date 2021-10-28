@@ -61,6 +61,20 @@
 
         //함수는 변수,매개변수,리턴값 데이터형태로 사용될 수 있다.
         //이러한 것을 first-class citizen(object)라고 부른다.
+
+        //callback
+
+        var numbers = [20,10,9,8,7,6,5,4,3,2,1];
+        var sortfunc = function(a,b){
+                return a-b
+        }
+        numbers.sort(sortfunc); //sort는 음수 양수 0에 따라 순서를 정한다.
+
+        //numbers라고 하는것은 객체배열이다. sort();메소드이다. 내장객체 내장 메소드 모두 같은 말이다.
+
+        document.write(numbers); 
+
+        //순서대로 시간을 모두 소비하여 프로그램을 진행하는 것은 동기적, 해야하는 일을 미리 처리 후 완료하는 것을 비동기적 처리방식이라고 이야기한다. Ajax
     </script>
 </body>
 </html>
