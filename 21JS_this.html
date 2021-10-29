@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style></style>
+</head>
+<body>
+    <script>
+
+        function func(){
+            if(window === this){
+                document.write('window===this'+'<br>');
+            }
+        }
+
+        func();
+
+        //메소드를 호출했을 때 this의 값은?
+
+        var o = { 
+            func : function(){
+                if(o === this ){
+                    console.log('o === this');
+                }
+            }
+        }
+
+        o.func();
+
+        //this는 함수가 소속되어 있는 객체를 가르킨다.
+
+        var best = null;
+
+        function cake(){
+            best =  this;
+        }
+
+        var o1 = cake();
+
+        if(best === window){
+            document.write('window'+'<br>');
+        }
+
+        var o2 = new cake();
+        if (best === o2){
+            document.write('o2'+'<br>');
+        }
+
+        //객체로서 함수
+        var sum2 = new Function('x','y','return x+y;');
+
+        sum2(1,2); //는 3이 출력된다.
+
+        var o = {}
+        var p = {}
+        
+        function func(){
+            switch(this){
+                case o : 
+                    document.write('o<br>');
+                    break;
+                case p :
+                    document.write('p<br>');
+                    break;
+
+                case window :
+                    document.write('window<br>');
+                    break;
+            }
+        }
+
+        func();
+        func.apply(o);
+        func.apply(p);
+    </script>
+</body>
+</html>
