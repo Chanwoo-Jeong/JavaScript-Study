@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style></style>
+</head>
+<body>
+    <script>
+        function person(name){
+            this.name = name;
+            this.introduce = function(){
+                return 'My name is ' + this.name;
+            }
+        }    
+        var p1 = new person('chanwoo');
+        document.write(p1.introduce()+"<br>")
+
+        //아래는 상속하는 법
+
+        /*prototype를 통해 공통된 property(속성)을 다른객체에도 부여하여 여러번 중복되는 것을 막을 수 있다. 즉 공통된 속성을 다른 객체에도 prototype을 통해 부여하는 것을 상속이라고 한다.*/
+
+        function person1(name){
+            this.name = name;
+        }
+
+        person1.prototype.name=null;
+        person1.prototype.introduce = function(){
+            return 'My name is ' + this.name ;
+        }
+        
+        function programmer(name){
+            this.name = name;
+        }
+        programmer.prototype = new person1();
+        //person1이 가지고 있는 속성을 코드 한줄을 통해 programmer객체에 부여한다.
+
+        
+        programmer.prototype.coding = function(){return 'Hello world'};
+
+        var o1 = new programmer('munkyeong');
+        document.write(o1.introduce()+'<br>');
+        document.write(o1.coding());
+        
+        /*
+        1. 객체 o에서 ultraProp를 찾는다.
+        2. 없다면 Sub.prototype.ultraProp를 찾는다.
+        3. 없다면 Super.prototype.ultraProp를 찾는다.
+        4. 없다면 Ultra.prototype.ultraProp를 찾는다.
+        */
+
+        function Ultra(){};
+        Ultra.prototype.ultraprop = ture;
+
+        function Super(){};
+        super.prototype = new Ultra();
+
+        function sub(){};
+        sub.prototype = new Super();
+
+        var o = new Sub();
+        console.log(o.ultraprop);
+
+    </script>
+</body>
+</html>
