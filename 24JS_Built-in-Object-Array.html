@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style></style>
+</head>
+<body>
+    <script>
+        /*
+        자바스크립트는 아래와 같은 내장 객체를 가지고 있다. 
+        Object
+        Function
+        Array
+        String
+        Boolean
+        Number
+        Math
+        Date
+        RegExp
+        */
+
+         var arr = new Array('seoul','new york','ladarkh','pusan','Tsukuba');
+
+         function getCapital(t){
+             var index = Math.floor(t.length*Math.random());
+             //random은 0과 1사이의 숫자를 랜덤으로 뽑아냄 
+             //
+             document.write(t);
+             return t[index];
+         }
+
+         console.log(getCapital(arr));
+
+         
+
+         //Array 자체에 random 프로토타입 메소드 추가하기
+
+         Array.prototype.random = function(){
+            var index = Math.floor(this.length*Math.random());
+            return this[index];
+         }
+
+         var member = new Array('chanwoo','minwoo','munkyeong','hajin');
+
+         console.log(member.random());
+    </script>
+</body>
+</html>
