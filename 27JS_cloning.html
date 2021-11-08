@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style></style>
+</head>
+<body>
+    <script>
+
+        var a = 1;
+        var b = a;
+        b = 2;
+        console.log(a); // 1
+
+        //위의 예제는 원시데이터 타입일때의 예시로 기존 a의 값이 변하지 않는다. -->복제
+
+        var c = {'id':1};
+        var d = c;
+        d.id = 2;
+        console.log(c.id); //2
+        //그러나 객체의 경우 복제를 한 변수에서 객체의 값을 변경시키면 원본객체의 값이 변하게 된다. -->참조
+
+        //함수에서 작동
+
+        //원시데이터 형식일 때
+        var a = 1;
+        function func(b){
+            b=2;
+        }
+        func(a);
+        console.log(a); // 1이다.
+
+        //객체 타입일때
+
+        var c = {'id':1};
+        function func(d){
+            d = {'id':2};
+        }
+
+        func(c);
+        console.log(c.id); // 1
+
+        //다음과 같이 되면 처음 객체의 값이 변하게 된다.
+
+        var e = {'id':1};
+        function func(f){
+            f.id = 2;
+        }
+
+        func(e);
+        console.log(e.id);// 2가된다
+
+    </script>
+</body>
+</html>
